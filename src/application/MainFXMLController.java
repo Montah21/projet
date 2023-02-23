@@ -53,6 +53,10 @@ public class MainFXMLController implements Initializable {
     private void clicktopass(ActionEvent event) {
     
     }
+
+    @FXML
+    private void btnChercherClicked(ActionEvent event) {
+    }
     }
     
 
