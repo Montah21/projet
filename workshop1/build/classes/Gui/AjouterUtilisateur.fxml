@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.AjouterUtilisateurController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="252.0" style="-fx-background-color: CFB997;">
+         <children>
+            <Label fx:id="disid" layoutX="49.0" layoutY="40.0" prefHeight="17.0" prefWidth="131.0" />
+            <Label fx:id="discin" layoutX="58.0" layoutY="81.0" prefHeight="17.0" prefWidth="113.0" />
+            <Label fx:id="disnom" layoutX="56.0" layoutY="120.0" prefHeight="17.0" prefWidth="113.0" />
+            <Label fx:id="disprenom" layoutX="58.0" layoutY="156.0" prefHeight="17.0" prefWidth="113.0" />
+            <Label fx:id="dispass" layoutX="51.0" layoutY="200.0" prefHeight="17.0" prefWidth="123.0" />
+            <Label fx:id="disrole" layoutX="39.0" layoutY="249.0" prefHeight="17.0" prefWidth="123.0" />
+            <Label fx:id="distel" layoutX="44.0" layoutY="285.0" prefHeight="17.0" prefWidth="131.0" />
+            <ImageView fx:id="image" fitHeight="54.0" fitWidth="58.0" layoutX="17.0" layoutY="332.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Downloads/325826642_1675948932819513_3016904953604434469_n.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="400.0" prefWidth="415.0">
+         <children>
+            <Label fx:id="cin" layoutX="30.0" layoutY="74.0" prefHeight="17.0" prefWidth="37.0" text="Cin" textFill="#654d08">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="nom" layoutX="28.0" layoutY="114.0" prefHeight="17.0" prefWidth="62.0" text="Nom" textFill="#654d08">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="prenom" layoutX="26.0" layoutY="158.0" text="Prenom" textFill="#654d08">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="role" layoutX="34.0" layoutY="251.0" text="Role" textFill="#654d08">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="tel" layoutX="14.0" layoutY="297.0" text="Num_telephone " textFill="#654d08">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="password" layoutX="26.0" layoutY="200.0" text="Password " textFill="#654d08">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="passField" layoutX="159.0" layoutY="197.0" />
+            <TextField fx:id="cinFiled" layoutX="159.0" layoutY="71.0" />
+            <TextField fx:id="nomField" layoutX="159.0" layoutY="111.0" />
+            <TextField fx:id="prenomField" layoutX="159.0" layoutY="155.0" />
+            <TextField fx:id="roleField" layoutX="159.0" layoutY="249.0" />
+            <TextField fx:id="telField" layoutX="159.0" layoutY="294.0" />
+            <Button fx:id="myButton" layoutX="165.0" layoutY="354.0" mnemonicParsing="false" onAction="#sign_up" prefHeight="20.0" prefWidth="104.0" style="-fx-background-color: CFB997;" text="Sign_up " textFill="#111211" textOverrun="CLIP">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Label fx:id="control" layoutX="165.0" layoutY="48.0" prefHeight="17.0" prefWidth="138.0" />
+            <Button fx:id="show" layoutX="303.0" layoutY="351.0" mnemonicParsing="false" onAction="#displayAction" prefHeight="25.0" prefWidth="58.0" style="-fx-background-color: transparant;" text="show?" textFill="#862323" underline="true" />
+            <Button fx:id="afficherbtn" layoutX="15.0" layoutY="355.0" mnemonicParsing="false" onAction="#afficherUtilisateur" prefHeight="27.0" prefWidth="104.0" text="Afficher " />
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>
