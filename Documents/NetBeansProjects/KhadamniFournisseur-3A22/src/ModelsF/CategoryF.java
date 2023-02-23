@@ -10,71 +10,90 @@ package ModelsF;
  * @author Emna
  */
 public class CategoryF {
+
+    public static void add(CategoryF fc) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
      //att
-    private int id,quantite;
-    private String nom;
-    private String[] Type={"Accessoire","Protection","outilMeca","outilElec","outilPlomb","ConstructionMP"};
-    private boolean ProUsage;
+    private int idC;
+    private String nomC;
+   private String description;
+   private boolean ProUsage;
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public CategoryF(int idC, String nomC, String description, boolean ProUsage) {
+        this.idC = idC;
+        this.nomC = nomC;
+        this.description = description;
+        this.ProUsage = ProUsage;
+    }
+    
 
 //const
 
     public CategoryF() {
     }
 
-    public CategoryF(int id, int quantite, String nom, boolean ProUsage) {
-        this.id = id;
-        this.quantite = quantite;
-        this.nom = nom;
+    public CategoryF(int idC, String nomC, boolean ProUsage) {
+        this.idC = idC;
+        this.nomC = nomC;
         this.ProUsage = ProUsage;
     }
     //Getters
 
-    public int getId() {
-        return id;
+    public int getIdC() {
+        return idC;
     }
 
-    public int getQuantite() {
-        return quantite;
+
+    public String getNomC() {
+        return nomC;
     }
 
-    public String getNom() {
-        return nom;
-    }
-
-    public String[] getType() {
-        return Type;
-    }
+  
+ 
 
     public boolean isProUsage() {
         return ProUsage;
     }
     //Setters
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdC(int idC) {
+        this.idC = idC;
     }
 
-    public void setQuantite(int quantite) {
-        this.quantite = quantite;
-    }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
 
-    public void setType(String[] Type) {
-        this.Type = Type;
+    public void setNomC(String nomC) {
+        this.nomC = nomC;
     }
-
+    
     public void setProUsage(boolean ProUsage) {
         this.ProUsage = ProUsage;
     }
     //Display
-
     @Override
     public String toString() {
-        return super.toString(); //To change body of generated methods, choose Tools | Templates.
+        return "CategoryF{" + "idC=" + idC + ", nomC=" + nomC + ", description=" + description + ", ProUsage=" + ProUsage + '}';
     }
+
+
+
+    
+
+   
+//    public void setType(String accessoire) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+
+   
     
 }
 

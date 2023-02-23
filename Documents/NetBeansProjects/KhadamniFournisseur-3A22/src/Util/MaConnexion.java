@@ -17,22 +17,23 @@ public class MaConnexion {
     
     
     //DB PARAM
-    static final String URL ="jdbc:mysql://localhost:3306/Fournissseur";
+    static final String URL ="jdbc:mysql://localhost:3306/fournissseur";
     static final String USER ="root";
     static final String PASSWORD ="";
     
     //var
-    private Connection cnx;
+     Connection cnx;
     //1
     static MaConnexion instance;
     
     //const
     //2
-    private MaConnexion(){
+    public MaConnexion(){
         try {
             cnx = DriverManager.getConnection(URL, USER, PASSWORD);
+            System.out.println("Connexion établie");
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            System.err.println(ex.getMessage());
         }
     }
     

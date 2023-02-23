@@ -9,7 +9,12 @@ import java.util.List;
 import ModelsF.CategoryF;
 import ModelsF.Material;
 import Services.ServiceFournisseur;
-import java.util.Locale.Category;
+import Util.MaConnexion;
+import Services.ServiceMateriel;
+import Services.serviceCategorie;
+import java.sql.Connection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /*
 Ajouter matériels (id nom catégories *****ajouter catégorie matériels(3-4)
 
@@ -24,27 +29,61 @@ public class KhadamniFournisseur3A22 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Connection cnx = MaConnexion.getInstance().getCnx();
         // TODO code application logic here
+        MaConnexion mc = new MaConnexion();
          // service init
-        FournisseurInterface ps = new ServiceFournisseur();
-        
+        FournisseurInterface f = new ServiceFournisseur();
+        FournisseurInterface fm = new ServiceMateriel();
+        FournisseurInterface fc = new serviceCategorie();
         //player init
-//        Player p = new Player();
-//        p.setName("Sadio Mane");
-//        p.setNumber(19);
-//        p.setAge(28);
-//        
-//        //add action
-//        ps.addPlayer2(p);
-        
+         Material M = new Material();
+          Material m = new Material();
+          CategoryF c= new CategoryF();
+          //M
+     M.setNom("poignet");
+      M.setId(225);
+        M.setPrix(2800);
+        //c
+         c.setIdC(0);
+        c.setNomC("paint");
+        c.setDescription("chnia manedrouch");
+        c.setProUsage(false);
+//        C.setType("Accessoire");
+        fc.addCategory(c);
+        //m
+        m.setId(0);
+       
+        m.setNom("ampoule");
+        m.setPrix(5000);
+        m.setQuantity(20);
+        m.setCat(c);
+       
+       //add action
+//       fm.addMaterial2(M);
+       fm.addMaterial2(m);
         //select
-        //System.out.println(ps.fetchPlayers());
-        Material M = new Material();
+        System.out.println(fm.AfficherMaterial());
+//        Material M = new Material();
         M.setId(2);
         CategoryF C = new CategoryF();
-        C.setId(1);
+//        C.setId(1);
+ 
+//        Material M2 = new Material();
+        fm.deleteMaterial(m);
+        fm.ModifierMateriel(m);
+      
+        c.setIdC(0);
+        c.setNomC("paint");
+        c.setProUsage(false);
+//        C.setType("Accessoire");
+        fc.addCategory(c);
         
-        ps.affecterMaterial(M, C);
+        fc.deleteCategory(2);
+        fc.Modifiercategorie(c);
+        System.out.println(fc.AfficherCategorie());
+//        f.affecterMaterial(M, c);
+
         
     }
     

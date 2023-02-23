@@ -15,23 +15,49 @@ Ajouter matériels (id nom catégories *****ajouter catégorie matériels(3-4)
  * @author Emna
  */
 public class Material {
+
+    public static void add(Material mt) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     //Att
-   
+    
     private int id;
     private String nom;
-    private float prix;
-    private CategoryF categorie;
-//Const
-    public Material() {
-    }
+    private float prix; 
+    private int quantity;
+    private CategoryF cat ;
 
-    public Material(int id, String nom, float prix, CategoryF categorie) {
+    public Material(int id, String nom, float prix, int quantity, CategoryF cat) {
         this.id = id;
         this.nom = nom;
         this.prix = prix;
-        this.categorie = categorie;
+        this.quantity = quantity;
+        this.cat = cat;
     }
-//Getters
+   
+    
+
+    public Material() {
+    }
+
+    public Material( String nom, float prix, CategoryF cat) {
+        this.nom = nom;
+        this.prix = prix;
+        this.cat = cat;
+    }
+
+    public Material( int id, String nom, float prix, CategoryF cat) {
+       
+        this.id = id;
+        this.nom = nom;
+        this.prix = prix;
+        this.cat = cat; 
+    }
+
+    public CategoryF getCat() {
+        return cat;
+    }
+
     public int getId() {
         return id;
     }
@@ -44,11 +70,11 @@ public class Material {
         return prix;
     }
 
-    public CategoryF getCategorie() {
-        return categorie;
+  
+
+    public void setCat(CategoryF cat) {
+        this.cat = cat;
     }
-    
-    //Setters 
 
     public void setId(int id) {
         this.id = id;
@@ -62,17 +88,28 @@ public class Material {
         this.prix = prix;
     }
 
-    public void setCategorie(CategoryF categorie) {
-        this.categorie = categorie;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
-    //Display
+
+    public int getQuantity() {
+        return quantity;
+    }
 
     @Override
     public String toString() {
-        return super.toString(); //To change body of generated methods, choose Tools | Templates.
+        return "Material{" + "id=" + id + ", nom=" + nom + ", prix=" + prix + ", quantity=" + quantity + ", cat=" + cat + '}';
     }
+
+   
+
     
-    
-    
-    
+
 }
+ 
+   
+    
+    
+    
+    
+
