@@ -6,6 +6,7 @@
 package services;
 
 import interfaces.CommentService;
+import interfaces.PostService;
 import models.Comment;
 import models.User;
 import util.MyConnection;
@@ -25,7 +26,7 @@ import java.util.List;
  */
 public class CommentImp implements CommentService {
 Connection cnx = MyConnection.getInstance().getCnx();
-
+//    private PostService postService= new PostImp();
     @Override
     public void addComment(Comment comment) {
 
@@ -52,9 +53,10 @@ Connection cnx = MyConnection.getInstance().getCnx();
                 Comment c = new Comment();
                 c.setId(rs.getInt("ID"));
                 User user=new User(rs.getInt("IdUser"));
+              //  c.setPost(postService.getPostById(idPost));
                 c.setUser(user);
-                c.setImageUrl(rs.getString(4));
-                c.setContent(rs.getString(2));
+                c.setImageUrl(rs.getString(5));
+                c.setContent(rs.getString(3));
               
                
                 Comments.add(c);

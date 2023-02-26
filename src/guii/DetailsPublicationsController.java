@@ -3,29 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Gui;
-
+package guii;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
-import models.User;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
  *
  * @author Manel
  */
-public class AfficherCommentController implements Initializable {
-   
-   private ListView<String> listView = new ListView<>();
+public class DetailsPublicationsController implements Initializable {
 
+    @FXML
+    private Label Content;
+    @FXML
+    private Button PrecedentButton;
+    @FXML
+    private Button ModifierButton;
+    @FXML
+    private Button SupprimerButton;
 
     /**
      * Initializes the controller class.
@@ -33,16 +36,18 @@ public class AfficherCommentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-      // Créer une Label
-    Label label = new Label("Ajouter Commentaire");
-
-        // Ajouter la Label à un conteneur
-    Pane pane = new Pane();
-    pane.getChildren().add(label);
-
-
     }    
 
-   
+    @FXML
+    private void PrecedentAction(MouseEvent event) {
+    }
+
+    @FXML
+    private void ButtonModifierClicked(ActionEvent event) {
+    }
+
+    @FXML
+    private void buttonSupprimerClicked(ActionEvent event) {
+    }
     
 }

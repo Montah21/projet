@@ -1,5 +1,10 @@
 
+import interfaces.CommentService;
+import interfaces.LikeService;
 import interfaces.PostService;
+import models.Like;
+import models.Post;
+import services.LikeImp;
 import services.PostImp;
 
 /*
@@ -19,10 +24,14 @@ public class NewMain {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-   PostService pi=new PostImp() ;
-  // postService pi1=new PostService (.);
-      pi.deletePost(1);
-        System.out.println(pi.getPostByIdUser(1) );
+   //CommentService c=new CommentService() ;
+     //   c.addComment(comment);
+   //li.addLike(like);
+      //pi.deletePost(1);
+     //Post p = new Post(2,"reduction de 20% à partir de 100dt", 1, "image");
+      //pi.updatePost(Post);
+     
+       // System.out.println(li.getLikeByIdUser(1) );
       
         
     }

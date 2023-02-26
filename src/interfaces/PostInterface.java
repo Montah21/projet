@@ -18,5 +18,9 @@ public interface PostInterface {
   public void addPost(Post post);
   public List<Post> getPostByIdUser(int idUser); 
   public void updatePost(Post post);
-  public void deletePost(int id); 
+  public void deletePost(int id);
+  
+
+    
+  
 }

@@ -31,7 +31,7 @@ try {
             System.out.println(req);
             Statement st = cnx.createStatement();
             st.executeUpdate(req);
-            System.out.println("Post Added  successfully!");
+            System.out.println("Like Added  successfully!");
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -50,7 +50,7 @@ try {
                 Post post=new Post();
                 post.setId(rs.getInt("IDPost"));
                 l.setPost(post);
-                l.setUser(new User(rs.getInt("ID")));
+                l.setUser(new User(rs.getInt("IdUser")));
                l.setLiked(rs.getBoolean("IsLiked"));
 
               
@@ -89,6 +89,33 @@ try{
         catch (SQLException ex) {
             ex.printStackTrace();
         }
+    }
+
+    @Override
+    public boolean getLikeByIdUser(int idPost,int idUser) {
+List<Like> Likes = new ArrayList<>();
+        try {
+            
+            String req = "SELECT * FROM likes WHERE IDPost="+idPost+" and IdUser= "+idUser;
+            Statement st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+            while (rs.next()) {                
+                Like l = new Like();
+                Post post=new Post();
+                post.setId(rs.getInt("IDPost"));
+                l.setPost(post);
+                l.setUser(new User(rs.getInt("IdUser")));
+               l.setLiked(rs.getBoolean("IsLiked"));
+
+              
+               Likes.add(l);
+               
+            }
+            
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }  
+    return !Likes.isEmpty();
     }
     
 }

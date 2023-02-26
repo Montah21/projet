@@ -5,8 +5,6 @@
  */
 package Gui;
 
-import java.awt.Font;
-import java.awt.Insets;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
@@ -34,8 +32,7 @@ public class PostManagerController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-   
-        // Set up the UI elements
+         // Set up the UI elements
         Label titleLabel = new Label("Post Manager");
         titleLabel.setFont(new javafx.scene.text.Font("Arial", 24));
 
@@ -107,5 +104,6 @@ public class PostManagerController implements Initializable {
         public primaryStage() {
         }
     }
+        
     
 }

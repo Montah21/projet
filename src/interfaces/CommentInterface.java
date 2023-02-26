@@ -17,5 +17,6 @@ public interface CommentInterface {
   public void addComment(Comment comment);
   public List<Comment> getCommentByIdPost(int idPost); 
   public void updateComment(Comment comment);
-  public void deleteComment(int idComment);      
+  public void deleteComment(int idComment);
+  
 }

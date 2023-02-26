@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="ModifierAnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guii.ModifierPostController">
+   <children>
+      <TextArea fx:id="content" layoutX="38.0" layoutY="62.0" prefHeight="76.0" prefWidth="416.0" promptText="Publication" />
+      <Label layoutX="62.0" layoutY="147.0" text="image" textFill="#d6ad53">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="150.0" fitWidth="422.0" layoutX="35.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="modifierButton" layoutX="474.0" layoutY="344.0" mnemonicParsing="false" onAction="#modifierAction" style="-fx-background-color: #D6AD53;" text="Modifier" />
+      <Label layoutX="188.0" layoutY="14.0" text="Modifier Publication" textFill="#d6ad53">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

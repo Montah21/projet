@@ -18,4 +18,6 @@ public interface LikeService {
   public List<Like> getLikesByIdPost(int idPost); 
   public void dislike(Like like);
   public void deleteLike(Like like);
+
+     public boolean getLikeByIdUser(int idPost,int idUser);
 }
