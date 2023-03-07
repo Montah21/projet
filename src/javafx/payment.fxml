@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="536.0" prefWidth="803.0" style="-fx-background-color: gold;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.PaymentController">
+    <children>
+        <ImageView fitHeight="80.0" fitWidth="86.0" layoutX="34.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+            <Image url="@325826642_1675948932819513_3016904953604434469_n-modified%20(3).png" />
+            </image>
+        </ImageView>
+        <Button fx:id="retour" layoutX="31.0" layoutY="471.0" mnemonicParsing="false" onAction="#retour" prefHeight="31.0" prefWidth="86.0" style="-fx-background-color: #1e90ff; -fx-background-radius: 5px; -fx-text-fill: white;" text="retour" />
+        <Label layoutX="31.0" layoutY="131.0" prefHeight="17.0" prefWidth="114.0" text="Date :">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+        <Text fx:id="date" layoutX="88.0" layoutY="145.0" onDragDetected="#updateTime" strokeType="OUTSIDE" strokeWidth="0.0" text="2023-03-07" textAlignment="LEFT" wrappingWidth="184.234375">
+            <font>
+                <Font name="System Regular" size="14.0" />
+            </font>
+        </Text>
+        <Text fx:id="objet" layoutX="404.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Objet                   :   " textAlignment="LEFT" wrappingWidth="131.528076171875">
+            <font>
+                <Font name="System Regular" size="14.0" />
+            </font>
+        </Text>
+        <Text fx:id="flous" layoutX="404.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Montant a payer :" textAlignment="LEFT" wrappingWidth="120.328125">
+            <font>
+                <Font name="System Regular" size="14.0" />
+            </font>
+        </Text>
+        <Text fx:id="cartenumber" layoutX="404.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numero de Carte :" textAlignment="LEFT" wrappingWidth="120.328125">
+            <font>
+                <Font name="System Regular" size="14.0" />
+</font>
+</Text>
+<Text fx:id="cvc" layoutX="464.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CVC  :" textAlignment="LEFT" wrappingWidth="50.728179931640625">
+<font>
+<Font name="System Regular" size="14.0" />
+</font>
+</Text>
+<Button fx:id="payButton" layoutX="556.0" layoutY="471.0" mnemonicParsing="false" onAction="#makePayment" prefHeight="31.0" prefWidth="206.0" style="-fx-background-color: #1e90ff; -fx-background-radius: 5px; -fx-text-fill: white;" text="Pay Now" />
+<Text fx:id="successMessage" layoutX="404.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="LEFT" wrappingWidth="375.296875">
+<font>
+<Font name="System Bold" size="16.0" />
+</font>
+</Text>
+<Text fx:id="errorMessage" layoutX="404.0" layoutY="406.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="LEFT" wrappingWidth="375.296875">
+<font>
+<Font name="System Bold" size="16.0" />
+</font>
+</Text>
+<Text fx:id="loadingMessage" layoutX="404.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Processing Payment..." textAlignment="LEFT" visible="false" wrappingWidth="375.296875">
+<font>
+<Font name="System Bold" size="16.0" />
+</font>
+</Text>
+      <TextField fx:id="cartenum" layoutX="527.0" layoutY="239.0" promptText="XXXX-XXXX-XXXX-XXXX" />
+      <DatePicker fx:id="expdate" layoutX="527.0" layoutY="281.0" prefHeight="26.0" prefWidth="150.0" promptText="jj/mm/aaaa" />
+      <Text fx:id="dateexp" layoutX="404.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date d'expiration :" textAlignment="LEFT" wrappingWidth="120.328125">
+         <font>
+            <Font name="System Regular" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="524.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&quot;Khadamni&quot; Entreprise" wrappingWidth="230.30078125">
+         <font>
+            <Font name="Felix Titling" size="16.0" />
+         </font>
+      </Text>
+      <PasswordField fx:id="cvccode" layoutX="536.0" layoutY="337.0" prefHeight="26.0" prefWidth="74.0" promptText="CVC" />
+      <Text layoutX="223.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion de Commandes &amp; Panier">
+         <font>
+            <Font name="Bauhaus 93" size="25.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="232.0" fitWidth="238.0" layoutX="58.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@1200px-La_Poste_tunisienne_2011.svg.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="108.0" fitWidth="120.0" layoutX="331.0" layoutY="397.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@lock-icon-29056.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="536.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="37.000 DT" wrappingWidth="131.528076171875">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+</children>
+</AnchorPane>

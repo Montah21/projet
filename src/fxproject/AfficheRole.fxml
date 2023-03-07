@@ -1,23 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.web.WebView?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="fxproject.AfficheRoleController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black; -fx-border-color: gold;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxproject.AfficheRoleController">
    <children>
-      <ListView fx:id="tab" layoutX="26.0" layoutY="20.0" prefHeight="153.0" prefWidth="548.0" style="-fx-background-color: gold;" />
-      <TextField fx:id="Client_ID" layoutX="98.0" layoutY="200.0" style="-fx-background-color: gold;" />
-      <TextField fx:id="Loc" layoutX="379.0" layoutY="200.0" style="-fx-background-color: gold;" />
-      <TextField fx:id="OuvrierNum" layoutX="379.0" layoutY="266.0" style="-fx-background-color: gold;" />
-      <Label layoutX="37.0" layoutY="204.0" text="Votre ID" textFill="#ffcc00" />
-      <Label layoutX="272.0" layoutY="204.0" text="Votre Localisation" textFill="#ffcc00" />
-      <Label layoutX="258.0" layoutY="270.0" text="Num d'Ouvrier Choisi" textFill="#ffcc00" />
-      <Button layoutX="309.0" layoutY="328.0" mnemonicParsing="false" onAction="#btnAppliquerClicked" style="-fx-background-color: gold; -fx-border-color: white;" text="Appliquer" textFill="WHITE" />
-      <TextField fx:id="ClientNum" layoutX="98.0" layoutY="266.0" style="-fx-background-color: gold;" />
-      <Label layoutX="23.0" layoutY="270.0" text="Votre Num" textFill="#ffcc00" />
+      <ListView fx:id="tab" layoutX="34.0" layoutY="74.0" prefHeight="188.0" prefWidth="257.0" style="-fx-background-color: gold;" />
+      <TextField fx:id="Client_ID" layoutX="89.0" layoutY="301.0" style="-fx-background-color: gold;" />
+      <TextField fx:id="Loc" layoutX="370.0" layoutY="301.0" style="-fx-background-color: gold;" />
+      <Label layoutX="28.0" layoutY="305.0" text="Votre Nom" textFill="#ffcc00" />
+      <Label layoutX="263.0" layoutY="305.0" text="Votre Adresse" textFill="#ffcc00" />
+      <Label layoutX="249.0" layoutY="371.0" text="Num d'Ouvrier Choisi" textFill="#ffcc00" />
+      <Button layoutX="300.0" layoutY="429.0" mnemonicParsing="false" onAction="#btnAppliquerClicked" style="-fx-background-color: gold; -fx-border-color: white;" text="Appliquer" textFill="WHITE" />
+      <TextField fx:id="ClientNum" layoutX="89.0" layoutY="367.0" style="-fx-background-color: gold;" />
+      <Label layoutX="14.0" layoutY="371.0" text="Votre Num" textFill="#ffcc00" />
+      <ImageView fitHeight="111.0" fitWidth="139.0" layoutX="14.0" layoutY="401.0">
+         <image>
+            <Image url="@../../../../../Downloads/Black%20and%20Gold%20Classy%20Minimalist%20Circular%20Name%20Logo%20(2).png" />
+         </image>
+      </ImageView>
+      <WebView fx:id="map" layoutX="308.0" layoutY="7.0" prefHeight="259.0" prefWidth="267.0" />
+      <ChoiceBox fx:id="OuvrierNum" layoutX="370.0" layoutY="367.0" prefWidth="150.0" style="-fx-background-color: gold;" />
+      <Label layoutX="34.0" layoutY="46.0" text="Nom Ouvrier" textFill="#fff600" />
+      <Label layoutX="135.0" layoutY="46.0" text="Numero Telephone" textFill="#fff600" />
    </children>
 </AnchorPane>

@@ -61,7 +61,7 @@ public class UpdateController implements Initializable {
     @FXML
     private void btnAppliquerClicked(ActionEvent event) {
                 applicationDAO dao = new applicationDAO(); 
-        application newApp = new application(ID_Ov.getText(), OvName.getText(), Integer.parseInt(OvNum.getText()),OvRo.getText() ,OvLoc.getText(), Doc.getText());
+        application newApp = new application(1, OvName.getText(), Integer.parseInt(OvNum.getText()),OvRo.getText() ,OvLoc.getText(), Doc.getText());
     dao.affecterApplication(newApp);
     }
 

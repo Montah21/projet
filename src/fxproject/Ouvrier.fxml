@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: gold;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxproject.OuvrierController">
+   <children>
+      <Label layoutX="330.0" layoutY="24.0" text="Profile Ouvrier">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Button layoutX="259.0" layoutY="126.0" mnemonicParsing="false" onAction="#taches" prefHeight="74.0" prefWidth="276.0" style="-fx-background-color: black;" text="Voir mes taches" textFill="WHITE" />
+      <Button layoutX="259.0" layoutY="223.0" mnemonicParsing="false" onAction="#paniers" prefHeight="74.0" prefWidth="276.0" style="-fx-background-color: black;" text="Panier" textFill="WHITE" />
+      <Pane prefHeight="400.0" prefWidth="236.0" style="-fx-background-color: black;">
+         <children>
+            <Button layoutY="217.0" mnemonicParsing="false" onAction="#map" prefHeight="83.0" prefWidth="236.0" style="-fx-background-color: gold;" text="1ere fois? Cliquer ici pour appliquer" />
+         </children></Pane>
+   </children>
+</AnchorPane>

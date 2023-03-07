@@ -37,6 +37,7 @@ public class MaConnection {
     private MaConnection(){
         try {
             cnx = DriverManager.getConnection(URL, USER, PASSWORD);
+        System.out.println("Connection etablie avec succes !!!");
         } catch (SQLException ex) {
             ex.printStackTrace();
         }

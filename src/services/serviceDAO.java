@@ -32,7 +32,7 @@ public class serviceDAO implements ServiceInterface{
             ps.setString(2, p.getLocation());
             ps.setString(3, p.getServiceName());
            ps.setInt(4, p.getClientPhone());
-           ps.setString(5, p.getOuvrierID());
+           ps.setInt(5, p.getOuvrierID());
             ps.executeUpdate();
             System.out.println("Service Added Successfully!");
             
@@ -56,7 +56,7 @@ public class serviceDAO implements ServiceInterface{
                 p.setLocation(rs.getString(2));
                 p.setServiceName(rs.getString(3));
                 p.setClientPhone(rs.getInt(4));
-                p.setOuvrierID(rs.getString(5));
+                p.setOuvrierID(rs.getInt(5));
                 
                 services.add(p);
             }
@@ -64,20 +64,20 @@ public class serviceDAO implements ServiceInterface{
     
     }
     @Override
-    public List<service> FetchByID(String id)throws SQLException {
+    public List<service> FetchByID(int id)throws SQLException {
         List<service> services = new ArrayList<>();
         try {
             
-            String req = "SELECT * FROM service WHERE `OuvrierID` =\""+id+"\";";
+            String req = "SELECT * FROM service WHERE `OuvrierID`  =\""+id+"\";";
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {                
                 service p = new service();
-                p.setID_Client(rs.getString(1));
-                p.setLocation(rs.getString(2));
-                p.setServiceName(rs.getString(3));
-                p.setClientPhone(rs.getInt(4));
-                p.setOuvrierID(rs.getString(5));
+                p.setID_Client(rs.getString(2));
+                p.setLocation(rs.getString(3));
+                p.setServiceName(rs.getString(4));
+                p.setClientPhone(rs.getInt(5));
+                p.setOuvrierID(rs.getInt(6));
                 
                 services.add(p);
             }
@@ -103,7 +103,7 @@ public class serviceDAO implements ServiceInterface{
                 p.setLocation(rs.getString(2));
                 p.setServiceName(rs.getString(3));
                 p.setClientPhone(rs.getInt(4));
-                p.setOuvrierID(rs.getString(5));
+                p.setOuvrierID(rs.getInt(5));
                 
                 services.add(p);
             }
@@ -136,13 +136,25 @@ public service afficherService(String ClientID) {
         return p;
     }
 
+
+
+  @Override
+ public void SupprimerbyPhone(int Phone) {
+        String request = "DELETE FROM `service` WHERE `ClientPhone`= ?";
+        Statement st;
+       try {
+            PreparedStatement ps = cnx.prepareStatement(request);
+            ps.setInt(1, Phone);
+            //
+            ps.executeUpdate();
+            System.out.println("Application supprimé avec success via prepared Statement!!!");
+        } catch (SQLException ex) {
+              ex.printStackTrace();
+        }
+    }
+
+
 }
-
-
-
-
-
-
 
  /* @Override
     public void affecterApplication(application p) {

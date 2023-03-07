@@ -3,8 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
 package fxproject;
-
+import java.lang.String;
 import Models.service;
+import static java.awt.SystemColor.control;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
@@ -13,8 +14,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import services.serviceDAO;
 
@@ -31,12 +34,12 @@ public class TasksController implements Initializable {
     /**
      * Initializes the controller class.
      */
-    String id="A6896";
+    int id1=24;
     @Override
     public void initialize(URL url, ResourceBundle rb) {serviceDAO dao = new serviceDAO();
         List<service> services = null;
         try {
-            services = dao.FetchByID(id);
+            services = dao.FetchByID(id1);
         } catch (SQLException ex) {
             Logger.getLogger(JointureController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -52,5 +55,23 @@ public class TasksController implements Initializable {
     
         // TODO
     }    
+
+    @FXML
+    private void delete(ActionEvent event) {
+   
+     
+     String selectedItem = tab.getSelectionModel().getSelectedItem();
+    if (selectedItem != null) {
+        tab.getItems().remove(selectedItem);
+        int phone = Integer.parseInt(selectedItem.split(" - ")[1]);
+        serviceDAO dao = new serviceDAO(); 
+        dao.SupprimerbyPhone(phone);
+        
+       
+        
+       
+    } 
+
+    }
     
 }

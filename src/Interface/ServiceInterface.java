@@ -17,5 +17,6 @@ public interface ServiceInterface {
     public service afficherService(String ClientID);
   public List<service> afficherServices() throws SQLException;  
   public List<service> Jointure() throws SQLException;
-  public List<service> FetchByID(String id)throws SQLException;
+  public List<service> FetchByID(int id)throws SQLException;
+  public void SupprimerbyPhone(int id);
 }

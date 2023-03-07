@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="663.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.Login2Controller">
+   <children>
+      <AnchorPane prefHeight="464.0" prefWidth="342.0" style="-fx-background-color: black;">
+         <children>
+            <Label layoutX="61.0" layoutY="421.0" prefHeight="43.0" prefWidth="182.0" text="WWW.khadameni@support.tn" />
+            <ImageView fitHeight="149.0" fitWidth="149.0" layoutX="14.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@325826642_1675948932819513_3016904953604434469_n.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="464.0" prefWidth="428.0" style="-fx-background-color: gold;">
+         <children>
+            <Label fx:id="cinLabel" layoutX="38.0" layoutY="41.0" prefHeight="36.0" prefWidth="97.0" text="Cin" />
+            <Label fx:id="passwordLabel" layoutX="30.0" layoutY="107.0" prefHeight="50.0" prefWidth="127.0" text="Password" />
+            <TextField fx:id="cinField" layoutX="169.0" layoutY="47.0" />
+            <PasswordField fx:id="passField" layoutX="170.0" layoutY="125.0" prefHeight="25.0" prefWidth="149.0" />
+            <Button fx:id="button_sign" layoutX="95.0" layoutY="239.0" mnemonicParsing="false" onAction="#Login" prefHeight="36.0" prefWidth="149.0" text="Login" />
+            <Label layoutX="38.0" layoutY="329.0" prefHeight="43.0" prefWidth="120.0" text="Not a member? " />
+            <Button fx:id="button_log" layoutX="48.0" layoutY="372.0" mnemonicParsing="false" onAction="#sign" prefHeight="36.0" prefWidth="78.0" style="-fx-background-color: transparant;" text="Sign_up" />
+            <Button fx:id="Password" layoutX="236.0" layoutY="403.0" mnemonicParsing="false" onAction="#forgetPass" prefHeight="36.0" prefWidth="120.0" text="forget password" />
+            <Label fx:id="control" layoutX="85.0" layoutY="190.0" prefHeight="25.0" prefWidth="199.0" />
+            <Label fx:id="control" layoutX="79.0" layoutY="150.0" prefHeight="25.0" prefWidth="156.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>

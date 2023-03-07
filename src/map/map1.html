@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="leaflet.css" />
+    <script src="leaflet.js"></script>
+</head>
+<body>
+    
+    <div id="mapid" style="height: 500px;"></div>
+    <div id="latLng"></div>
+    <script>
+        // Define the icon URL and options
+        var iconUrl = 'marker-icon.png';
+        var iconOptions = {
+            iconSize: [20, 30],
+            iconAnchor: [15, 15]
+        };
+
+        // Create the icon object
+        var icon = L.icon({
+            iconUrl: iconUrl,
+            iconSize: iconOptions.iconSize,
+            iconAnchor: iconOptions.iconAnchor
+        });
+
+        var mymap = L.map('mapid').setView([34.899, 8.056], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+            maxZoom: 18
+        }).addTo(mymap);
+
+       // var marker1 = L.marker([32.899,8.056], { icon: icon }).addTo(mymap);
+    </script>
+</body>
+</html>

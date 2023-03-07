@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.TilePane?>
+
+<AnchorPane id="AnchorPane" prefHeight="475.0" prefWidth="646.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.DashBoardController">
+   <children>
+      <ListView fx:id="Listview" layoutX="33.0" layoutY="14.0" prefHeight="276.0" prefWidth="593.0" />
+      <TilePane fx:id="TilePane" layoutX="498.0" layoutY="363.0" prefHeight="87.0" prefWidth="119.0" />
+      <ImageView fitHeight="129.0" fitWidth="207.0" layoutX="20.0" layoutY="332.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@325826642_1675948932819513_3016904953604434469_n.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -13,12 +13,12 @@ public class service {
     private String Location;
     private String ServiceName;
     private int ClientPhone;
-    private String OuvrierID;
+    private int OuvrierID;
 
     public service() {
     }
 
-    public service(String ID_Client, String Location, String ServiceName, int ClientPhone, String OuvrierID) {
+    public service(String ID_Client, String Location, String ServiceName, int ClientPhone, int OuvrierID) {
         this.ID_Client = ID_Client;
         this.Location = Location;
         this.ServiceName = ServiceName;
@@ -58,11 +58,11 @@ public class service {
         this.ClientPhone = ClientPhone;
     }
 
-    public String getOuvrierID() {
+    public int getOuvrierID() {
         return OuvrierID;
     }
 
-    public void setOuvrierID(String OuvrierID) {
+    public void setOuvrierID(int OuvrierID) {
         this.OuvrierID = OuvrierID;
     }
 

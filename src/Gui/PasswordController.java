@@ -1,0 +1,90 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Gui;
+
+import Services.UtilisateurService;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+
+/**
+ * FXML Controller class
+ *
+ * @author Mariem
+ */
+public class PasswordController implements Initializable {
+     
+   @FXML
+    private Label Npassword;
+
+      @FXML
+    private Label mail;
+
+    @FXML
+    private TextField mailField;
+
+
+    @FXML
+    private TextField passwordField; 
+
+    @FXML
+    private Button reinstall;
+    
+      @FXML
+    private Label message;
+    
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        
+    }
+    
+  
+      
+        // on doit crée une méthode rest dans le service utilisateur 
+    
+        
+  @FXML
+   void reinstallPassword(ActionEvent event) {
+       
+    UtilisateurService us = new UtilisateurService();
+     
+    String maill  = (mailField.getText());
+    String newPassword = passwordField.getText();
+    us.resetPassword(maill, newPassword);
+   // boolean success = resetPassword(mail,newPassword);
+    //if (success) {
+     //   message.setText("Le mot de passe est changé avec succées .");
+   // } else {
+  //      message.setText("ce user n'existe pas dans notre système.");
+  //  }
+}
+
+//private boolean resetPassword(int id, String Password) {
+ //   return us.resetPassword(id, Password);
+//}
+    
+    
+    
+    
+ }
+    
+    
+
+
+
+
+
+    
+    
+    
+

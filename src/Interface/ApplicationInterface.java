@@ -34,5 +34,5 @@ public interface ApplicationInterface {
     public application afficherApplication(String id);
     public List<application> afficherApplications() throws SQLException;
     public List<application> FetchByRole(String Role);
-    public String FetchIDByNum(int Num) throws SQLException;
+    public int FetchIDByNum(int Num) throws SQLException;
 }

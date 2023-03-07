@@ -25,6 +25,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
@@ -42,20 +43,19 @@ import javafx.stage.Stage;
 public class FXML1Controller implements Initializable {
 
     @FXML
-    private TextField rl;
-    @FXML
-    private Label tab;
-   
+    private ChoiceBox<String> rl;
+   private String[] Role={"Plombier","Electrecien","Mecanicien","Bricoleur"};
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        rl.getItems().addAll(Role) ; 
         // TODO
     }    
     public String getSourceText() {
-        return rl.getText();
+        return rl.getValue();
     }
 
     @FXML
@@ -65,7 +65,7 @@ public class FXML1Controller implements Initializable {
         Parent root = loader.load();
        //bsh tpassi valeur mn interface ll interface taamel haka w fl interface the taamel public function t affecty feha 
         AfficheRoleController AfficheRoleController = loader.getController();
-            AfficheRoleController.setText(rl.getText());
+            AfficheRoleController.setText(rl.getValue());
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.show();

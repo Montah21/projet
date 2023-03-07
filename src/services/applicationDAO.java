@@ -9,11 +9,12 @@ package services;
  *
  * @author Administrator
  */
+
 import Interface.ApplicationInterface;
 import utils.MaConnection;
 import Models.application;
-import java.lang.System.Logger;
-import java.lang.System.Logger.Level;
+//import java.lang.System.Logger;
+//import java.lang.System.Logger.Level;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,14 +26,14 @@ public class applicationDAO implements ApplicationInterface{
     public void addApplication(application p) {
         try {
             
-            String req = "INSERT INTO `application`(`id`, `name`, `num`, `role`, `location`, `document`) VALUES (?,?,?,?,?,?)";
+            String req = "INSERT INTO `application`(`id`, `name`, `num`, `role`, `location`, `document`) VALUES (NULL,?,?,?,?,?)";
             PreparedStatement ps = cnx.prepareStatement(req);
-            ps.setString(1, p.getId());
-            ps.setString(2, p.getName());
-            ps.setInt(3, p.getNum());
-           ps.setString(4, p.getRole());
-           ps.setString(5, p.getLocation());
-           ps.setString(6, p.getDocument());
+        //    ps.setInt(1, p.getId());
+            ps.setString(1, p.getName());
+            ps.setInt(2, p.getNum());
+           ps.setString(3, p.getRole());
+           ps.setString(4, p.getLocation());
+           ps.setString(5, p.getDocument());
             ps.executeUpdate();
             System.out.println("Application Added Successfully!");
             
@@ -52,7 +53,7 @@ public List<application> afficherApplications() throws SQLException {
             ResultSet rs = st.executeQuery(request);
             while(rs.next()){
                 application p = new application();
-                p.setId(rs.getString(1));
+                p.setId(rs.getInt(1));
                 p.setName(rs.getString(2));
                 p.setNum(rs.getInt(3));
                 p.setRole(rs.getString(4));
@@ -76,7 +77,7 @@ public application afficherApplication(String id) {
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(request);
             while(rs.next()){
-                p.setId(rs.getString(1));
+                p.setId(rs.getInt(1));
                 p.setName(rs.getString(2));
                 p.setNum(rs.getInt(3));
                 p.setRole(rs.getString(4));
@@ -99,7 +100,7 @@ public application afficherApplication(String id) {
            ps.setString(3, p.getRole());
            ps.setString(4, p.getLocation());
            ps.setString(5, p.getDocument());
-           ps.setString(6, p.getId());
+           ps.setInt(6, p.getId());
           
             ps.executeUpdate();
             System.out.println("Application updated successfully!");
@@ -117,7 +118,7 @@ public application afficherApplication(String id) {
             ps.setString(1, id);
             //
             ps.executeUpdate();
-            System.out.println("Photographie supprimé avec success via prepared Statement!!!");
+            System.out.println("Application supprimé avec success via prepared Statement!!!");
         } catch (SQLException ex) {
               ex.printStackTrace();
         }
@@ -131,7 +132,7 @@ public application afficherApplication(String id) {
             ResultSet rs = st.executeQuery(request);
             while(rs.next()){
                 application p = new application();
-                p.setId(rs.getString(1));
+                p.setId(rs.getInt(1));
                 p.setName(rs.getString(2));
                 p.setNum(rs.getInt(3));
                 p.setRole(rs.getString(4));
@@ -146,13 +147,13 @@ public application afficherApplication(String id) {
         return applications;
     }
      @Override
-    public String FetchIDByNum(int Num) throws SQLException{
-        String id = "";
+    public int FetchIDByNum(int Num) throws SQLException{
+        int id=0 ;
         String request ="SELECT `id` FROM `application` WHERE `num` =\""+Num+"\";";
         try {
             Statement st = cnx.createStatement();
             ResultSet rs = st.executeQuery(request);
-            while(rs.next()){id=rs.getString(1);}
+            while(rs.next()){id=rs.getInt(1);}
          System.out.println(id);}
         catch (SQLException ex) {
               ex.printStackTrace();

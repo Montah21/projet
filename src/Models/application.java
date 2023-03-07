@@ -12,7 +12,7 @@ package Models;
 
    public class application {
     
-    private String id;
+    private int id;
     private String name;
     private int num;
     private String role;
@@ -22,7 +22,7 @@ package Models;
     public application() {
     }
 
-    public application(String id, String name, int num, String role, String location, String document) {
+    public application(int id, String name, int num, String role, String location, String document) {
         this.id = id;
         this.name = name;
         this.num = num;
@@ -31,11 +31,11 @@ package Models;
         this.document = document;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

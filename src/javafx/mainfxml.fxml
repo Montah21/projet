@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="totalCost" onDragDetected="#displaytotalCost" prefHeight="665.0" prefWidth="738.0" style="-fx-background-color: gold;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafx.MainfxmlController">
+   <children>
+      <Text layoutX="224.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion de Commandes &amp; Panier">
+         <font>
+            <Font name="Bauhaus 93" size="25.0" />
+         </font>
+      </Text>
+      <Text layoutX="20.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="c'est quoi la categorie ? :">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="249.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tu cherche quoi ? :" wrappingWidth="138.90234375">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Button fx:id="search" layoutX="446.0" layoutY="104.0" mnemonicParsing="false" onAction="#rchrch" text="recherche" />
+      <TextField fx:id="rechercheparnom" layoutX="235.0" layoutY="104.0" prefHeight="26.0" prefWidth="200.0" />
+      <Button fx:id="add" layoutX="586.0" layoutY="217.0" mnemonicParsing="false" onAction="#AddProductAction" prefHeight="50.0" prefWidth="107.0" text="Ajouter" />
+      <ImageView fx:id="image1" fitHeight="57.0" fitWidth="74.0" layoutX="8.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@325826642_1675948932819513_3016904953604434469_n-modified%20(3).png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="image2" fitHeight="139.0" fitWidth="139.0" layoutX="14.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@png-clipart-stick-man-wearing-yellow-hard-hat-and-safety-vest-occupational-safety-and-health-environment-health-and-safety-construction-site-safety-industrial-worker-hat-hand-removebg-preview (1).png" />
+         </image>
+      </ImageView>
+      <ListView fx:id="t1" layoutX="226.0" layoutY="174.0" prefHeight="158.0" prefWidth="339.0" />
+      <Text layoutX="508.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock" wrappingWidth="37.30230712890625">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="235.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" wrappingWidth="37.30230712890625">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="323.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix" wrappingWidth="26.90234375">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="397.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reférence" wrappingWidth="57.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="categorie" layoutX="14.0" layoutY="103.0" onAction="#select" prefWidth="150.0" promptText="Categories" />
+      <ListView fx:id="t2" layoutX="208.0" layoutY="454.0" prefHeight="158.0" prefWidth="378.0" />
+      <ImageView fx:id="image4" fitHeight="69.0" fitWidth="74.0" layoutX="490.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@53b098486fd6277da1963ccdb74c25c6-modified.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="480.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock" wrappingWidth="37.30230712890625">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="214.0" layoutY="445.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" wrappingWidth="37.30230712890625">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="310.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix" wrappingWidth="26.90234375">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="377.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reférence" wrappingWidth="57.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Button fx:id="moin" layoutX="230.0" layoutY="623.0" mnemonicParsing="false" onAction="#lower" prefHeight="26.0" prefWidth="47.0" text="-1" />
+      <Button fx:id="plus" layoutX="345.0" layoutY="623.0" mnemonicParsing="false" onAction="#more" prefHeight="26.0" prefWidth="47.0" text="+1" />
+      <Button fx:id="supp" layoutX="489.0" layoutY="623.0" mnemonicParsing="false" onAction="#SupprimerProduit" prefHeight="26.0" prefWidth="90.0" text="Supprimer" />
+      <Button fx:id="commander" layoutX="597.0" layoutY="506.0" mnemonicParsing="false" onAction="#commander" prefHeight="26.0" prefWidth="102.0" text="Commander" />
+      <Text layoutX="240.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remplir ton panier dés Maintenant !" wrappingWidth="204.556640625">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="image5" fitHeight="39.0" fitWidth="47.0" layoutX="629.0" layoutY="547.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@téléchargement%20(1)-modified.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="534.0" layoutY="441.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantite">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Text>
+      <Text layoutX="20.0" layoutY="521.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Le total de vos  produits :" wrappingWidth="69.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Button fx:id="totalQuantitiesLabel" layoutX="23.0" layoutY="588.0" mnemonicParsing="false" onAction="#displayTotalQuantities" text="clique ici" />
+      <Text layoutX="104.0" layoutY="530.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total a payer" wrappingWidth="69.0">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Button fx:id="to" layoutX="104.0" layoutY="566.0" mnemonicParsing="false" onAction="#displaytotalCost" prefHeight="69.0" prefWidth="68.0" text="QRCode" />
+      <ImageView fitHeight="69.0" fitWidth="69.0" layoutX="95.0" layoutY="440.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

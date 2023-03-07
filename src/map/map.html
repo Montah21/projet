@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="leaflet.css" />
+    <script src="leaflet.js"></script>
+</head>
+<body>
+    
+    <div id="mapid" style="height: 500px;"></div>
+  <div id="latLng"></div>
+    <script>
+        // Define the icon URL and options
+var iconUrl = 'marker-icon.png';
+var iconOptions = {
+  iconSize: [20, 30],
+  iconAnchor: [15, 15]
+};
+
+// Create the icon object
+var icon = L.icon({
+  iconUrl: iconUrl,
+  iconSize: iconOptions.iconSize,
+  iconAnchor: iconOptions.iconAnchor
+});
+ 
+    var mymap = L.map('mapid').setView([36.624896, 10.191193], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+        maxZoom: 18
+    }).addTo(mymap);
+    var marker = L.marker(mymap.getCenter(),{ icon: icon }).addTo(mymap);
+
+    var latLngElem = document.getElementById('latLng');
+    
+    // Set the center, lat and lng variables and log their values
+    var center = mymap.getCenter();
+   
+    var lat = center.lat.toFixed(3);
+    var lng = center.lng.toFixed(3);
+    console.log("Center: " + center);
+    console.log("Lat: " + lat);
+    console.log("Lng: " + lng);
+    
+    // Pass the variables to JavaFX
+    window.center = center;
+    window.lat = lat;
+    window.lng = lng;
+    mymap.on('move', function(e) {
+    marker.setLatLng(mymap.getCenter());
+});
+
+    mymap.on('moveend', function(e) {
+        console.log("Map moved!");
+        var center = mymap.getCenter();
+        var lat = center.lat.toFixed(3);
+        var lng = center.lng.toFixed(3);
+        latLngElem.innerHTML = lat + ', ' + lng;
+        window.center = center;
+        window.lat = lat;
+        window.lng = lng;
+        
+    });
+
+    </script>
+</body>
+</html>
+
+

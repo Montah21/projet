@@ -4,10 +4,15 @@
  */
 package fxproject;
 
-/**
- *
- * @author Administrator
- */
-class id {
-    
+
+public class Data {
+    private String myVariable;
+
+    public String getMyVariable() {
+        return myVariable;
+    }
+
+    public void setMyVariable(String myVariable) {
+        this.myVariable = myVariable;
+    }
 }
